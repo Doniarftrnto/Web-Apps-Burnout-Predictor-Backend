@@ -15,9 +15,22 @@ const journalSchema = new moongoose.Schema(
       type: String,
       required: [true, "Journal text is required"],
     },
+    date: {
+      type: String,
+      required: true,
+    },
+    time: {
+      type: String,
+      required: true,
+    },
     sentiment: {
       type: Number,
       default: 0,
+    },
+    status: {
+      type: String,
+      enum: ["Burnout", "At risk", "Healthy", ""],
+      default: "",
     },
     burnout_precentage: {
       type: Number,
